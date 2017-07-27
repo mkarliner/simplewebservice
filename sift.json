@@ -1,0 +1,52 @@
+{
+  "name": "simplewebservice",
+  "display-name": "Simplewebservice Sift",
+  "description": "Hello World Serverless Web Service",
+  "author": "",
+  "version": "1.0.0",
+  "icon": "assets/blueprint.svg",
+  "interfaces": {
+    "email": {
+      "thread" : {
+        "controller": "dist/js/controller.umd-es2015.min.js"
+      },
+      "client" : {
+        "controller": "dist/js/email-client-controller.umd-es2015.min.js"
+      }
+    },
+    "summary": {
+      "controller": "dist/js/controller.umd-es2015.min.js"
+    }
+  },
+  "dag": {
+    "inputs":{
+      "rpc":{
+        "simple_rpc":{
+          "methods": ["GET"],
+          "path": "/simple",
+          "CORS":{}
+        }
+      }
+    },
+    "nodes":[{
+      "#": "Simple RPC",
+      "input":{
+        "bucket": "simple_rpc"
+      },
+      "implementation": {
+        "javascript": "server/simple.js"
+      },
+      "outputs": {
+        "api_rpc": {}
+      }
+    }],
+    "stores":{},
+    "outputs":{
+      "exports":{
+        "api_rpc": {
+          "import": "_rpc"
+        }
+      }
+    }
+  }
+}

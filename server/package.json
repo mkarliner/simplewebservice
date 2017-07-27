@@ -1,0 +1,10 @@
+{
+  "name": "simplewebservice",
+  "display-name": "Simplewebservice Sift",
+  "description": "Hello World Serverless Web Service",
+  "author": "",
+  "version": "1.0.0",
+  "#": "Please use 'redsift npm' instead of system 'npm' ",
+  "scripts": {},
+  "dependencies": {}
+}
