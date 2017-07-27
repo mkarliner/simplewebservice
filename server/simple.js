@@ -26,7 +26,7 @@ module.exports = function (got) {
   return inData.map(d => {
     let req = JSON.parse(d.value);
     console.log(`${req.method}: ${req.request_uri}`);
-    let res = newResponse(200, req.header, 'Nice one!');
+    let res = newResponse(200, req.header, 'Nice one Mike!');
 
     return {
       name: 'api_rpc',
